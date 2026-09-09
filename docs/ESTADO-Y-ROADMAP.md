@@ -2,6 +2,7 @@
 
 **Corte documental:** 9 de septiembre de 2026  
 **Última fase completada:** Fase 2 — Autenticación + MFA  
+**Fase activa:** Fase 3 — Criptografía
 **Cliente principal:** Kotlin Multiplatform + Compose Multiplatform
 
 ## Qué existe hoy
@@ -36,12 +37,13 @@ segura por plataforma, deep links, RLS AAL2, grants mínimos, pruebas pgTAP e in
 real contra Supabase local. La implementación común participa en el target Android; el
 shell y almacenamiento iOS están implementados pero no compilados en Windows.
 
-### Fase 3 — Criptografía: no iniciada
+### Fase 3 — Criptografía: en curso
 
-Debe implementar Argon2id, HKDF, AEAD, DEK, envolturas de contraseña y Recovery Key,
-almacenamiento seguro de claves, vectores conocidos y pruebas de corrupción/rotación. Las
-columnas de base de datos existen como frontera de autorización, pero no equivalen a esta
-funcionalidad.
+El repositorio incorpora el núcleo común, proveedores Android/iOS, DEK, envolturas de
+contraseña y Recovery Key, Argon2id/HKDF/AES-GCM, formato RK1, rotaciones y tests de
+vectores/corrupción. No está cerrada: faltan compilar y ejecutar los gates reales de ambas
+plataformas, interoperabilidad cruzada, benchmarks en dispositivos y revisión criptográfica
+independiente. La custodia biométrica local permanece en Fase 6.
 
 ### Fase 4 — Vault: no iniciada
 
@@ -78,7 +80,8 @@ monitorización y procedimiento de respuesta a incidentes.
 - Las tablas `vaults`, `vault_key_envelopes` y `vault_items` ya existen para validar RLS,
   pero la app todavía no cifra, crea ni muestra secretos reales.
 - La pantalla autenticada confirma identidad AAL2; no es aún la interfaz del vault.
-- La Recovery Key está diseñada, pero no generada ni almacenada por el código actual.
+- La Recovery Key ya se genera y valida en el núcleo, pero aún no existe onboarding ni se
+  persiste su envoltura.
 - La biometría y el bloqueo automático están diseñados, no implementados.
 - `security_events` recibe el evento de creación de cuenta, pero el subsistema completo de
   auditoría y emails pertenece a la Fase 7.
@@ -87,7 +90,7 @@ monitorización y procedimiento de respuesta a incidentes.
 
 ## Próximo punto de entrada
 
-La siguiente fase correcta es la **Fase 3 — Criptografía**. Antes de comenzar conviene
-convertir sus decisiones pendientes en criterios verificables: biblioteca nativa concreta,
-parámetros Argon2id medidos en dispositivos objetivo, formato versionado de las envolturas,
-representación de Recovery Key y estrategia de pruebas cruzadas Android/iOS.
+Continuar la **Fase 3 — Criptografía** ejecutando primero el gate Android fuera del sandbox,
+corrigiendo cualquier incompatibilidad de compilación y después validando el mismo protocolo
+en macOS/iOS. Los parámetros Argon2id no se congelan para producción hasta medirlos en los
+dispositivos mínimos objetivo.

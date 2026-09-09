@@ -11,8 +11,10 @@ como ejecutadas.
 - **Fase 1 — Base:** completada para el objetivo Windows/Android el 9 de septiembre de 2026. El build iOS sigue pendiente de macOS/Xcode.
 - **Fase 2 — Autenticación + MFA:** completada para el objetivo Windows/Android el 9 de
   septiembre de 2026. El build iOS sigue pendiente de macOS/Xcode.
-- **Fases 3 a 9:** no iniciadas. Su alcance permanece en el roadmap de Fase 0 y no se
-  documenta como funcionalidad entregada.
+- **Fase 3 — Criptografía:** en curso desde el 9 de septiembre de 2026. El núcleo y sus
+  pruebas están incorporados; faltan gates reales de plataforma, benchmarks y revisión
+  independiente.
+- **Fases 4 a 9:** no iniciadas.
 
 Consulta [Estado y roadmap](ESTADO-Y-ROADMAP.md) para distinguir lo implementado, lo
 validado y lo pendiente.
@@ -44,6 +46,12 @@ Multiplatform, registrado al comenzar la Fase 1.
 - [Pruebas y operación local](03-fase-2-autenticacion/PRUEBAS-Y-OPERACION.md)
 - [Trazabilidad de requisitos](03-fase-2-autenticacion/TRAZABILIDAD.md)
 
+### 04 — Fase 3: criptografía
+
+- [Resumen, alcance y puerta de salida](04-fase-3-criptografia/README.md)
+- [Arquitectura y formato criptográfico v1](04-fase-3-criptografia/ARQUITECTURA-Y-FORMATO.md)
+- [Pruebas y pendientes de plataforma](04-fase-3-criptografia/PRUEBAS-Y-PENDIENTES.md)
+
 ## Convención de carpetas
 
 ```text
@@ -53,7 +61,7 @@ docs/
 ├─ 01-fase-0/
 ├─ 02-fase-1-base/
 ├─ 03-fase-2-autenticacion/
-├─ 04-fase-3-criptografia/       # futura
+├─ 04-fase-3-criptografia/
 ├─ 05-fase-4-vault/              # futura
 ├─ 06-fase-5-generador/          # futura
 ├─ 07-fase-6-seguridad/          # futura
@@ -62,7 +70,7 @@ docs/
 └─ 10-fase-9-publicacion/        # futura
 ```
 
-Las carpetas futuras se crearán cuando empiece la fase correspondiente. Así se evita
+Las carpetas de fases posteriores se crearán cuando empiece la fase correspondiente. Así se evita
 confundir planificación con software entregado.
 
 ## Criterios documentales

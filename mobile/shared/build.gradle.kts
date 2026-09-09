@@ -5,7 +5,12 @@ plugins {
     alias(libs.plugins.androidMultiplatformLibrary)
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
+    alias(libs.plugins.cryptography)
     alias(libs.plugins.kotlinSerialization)
+}
+
+cryptography {
+    configureSwiftLinkerOpts = true
 }
 
 kotlin {
@@ -48,10 +53,15 @@ kotlin {
             implementation(libs.supabase.auth)
         }
         androidMain.dependencies {
+            implementation(libs.bouncycastle.provider)
             implementation(libs.compose.uiToolingPreview)
             implementation(libs.ktor.client.okhttp)
         }
         iosMain.dependencies {
+            implementation(libs.cryptography.core)
+            implementation(libs.cryptography.provider.optimal)
+            implementation(libs.cryptography.random)
+            implementation(libs.ionspin.libsodium)
             implementation(libs.ktor.client.darwin)
         }
         commonTest.dependencies {

@@ -4,12 +4,14 @@ Gestor móvil personal de secretos con cifrado del lado cliente y arquitectura z
 
 ## Estado actual
 
-El proyecto ha completado **FASE 2 — Autenticación + MFA** en el objetivo validable desde
-Windows/Android. La aplicación principal usa Kotlin Multiplatform con Compose Multiplatform:
+El proyecto ha completado **FASE 2 — Autenticación + MFA** y ha iniciado la **FASE 3 —
+Criptografía**. La aplicación principal usa Kotlin Multiplatform con Compose Multiplatform:
 Jetpack Compose nativo en Android y UI compartida para iOS. Registro, email, login, logout,
 recuperación protegida por MFA, sesión segura y TOTP están implementados; RLS exige AAL2
-para todo dato privado. El build iOS permanece diferido hasta macOS/Xcode. Expo se conserva
-solo como prototipo de referencia.
+para todo dato privado. El núcleo criptográfico ya cubre DEK, envolturas independientes,
+Argon2id, HKDF, AES-GCM, Recovery Key y rotaciones, pero la fase sigue abierta hasta superar
+los gates de plataforma, benchmarks y revisión independiente. Expo se conserva solo como
+prototipo de referencia.
 
 ## Documentación
 
@@ -19,6 +21,7 @@ solo como prototipo de referencia.
 - [Fase 0 — Vista interactiva](docs/01-fase-0/vista-interactiva.html)
 - [Fase 1 — Base](docs/02-fase-1-base/README.md)
 - [Fase 2 — Autenticación + MFA](docs/03-fase-2-autenticacion/README.md)
+- [Fase 3 — Criptografía](docs/04-fase-3-criptografia/README.md)
 
 ## Decisión de seguridad principal
 
