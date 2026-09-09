@@ -1,8 +1,8 @@
 # My Keys — Fase 0: diseño técnico
 
-**Estado:** aprobado; Fase 1 iniciada  
-**Fecha:** 8 de septiembre de 2026  
-**Alcance:** diseño únicamente; no inicia la Fase 1
+- **Estado:** completada y aprobada; Fases 1 y 2 implementadas
+- **Fecha:** 8 de septiembre de 2026
+- **Alcance:** diseño de referencia; las implementaciones se documentan en sus propias fases
 
 > **Enmienda de Fase 1 (9 de septiembre de 2026):** el cliente principal cambia de
 > React Native/Expo a Kotlin Multiplatform con Compose Multiplatform. Android usa Jetpack

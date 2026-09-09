@@ -14,6 +14,7 @@ solo como prototipo de referencia.
 ## Documentación
 
 - [Índice de documentación](docs/README.md)
+- [Estado y roadmap real](docs/ESTADO-Y-ROADMAP.md)
 - [Fase 0 — Diseño técnico completo](docs/01-fase-0/README.md)
 - [Fase 0 — Vista interactiva](docs/01-fase-0/vista-interactiva.html)
 - [Fase 1 — Base](docs/02-fase-1-base/README.md)

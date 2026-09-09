@@ -1,7 +1,8 @@
 # My Keys — Fase 2: autenticación y MFA
 
-**Estado:** completada en Windows/Android; build iOS diferido  
-**Inicio:** 9 de septiembre de 2026
+- **Estado:** completada en Windows/Android; build iOS diferido
+- **Inicio:** 9 de septiembre de 2026
+- **Cierre del alcance validable:** 9 de septiembre de 2026
 
 ## Objetivo
 
@@ -10,6 +11,15 @@ registro, confirmación de email, login, logout, recuperación de la contraseña
 restauración segura de sesión y MFA TOTP obligatorio. Ningún dato privado puede atravesar
 la frontera de Supabase con una sesión anónima o AAL1; PostgreSQL y RLS, no la interfaz,
 son la autoridad final.
+
+## Documentos de la fase
+
+- [Arquitectura y flujos](ARQUITECTURA-Y-FLUJOS.md): capas, estados y recorridos de
+  registro, login, recuperación, sesión y TOTP.
+- [Base de datos y seguridad](BASE-DE-DATOS-Y-SEGURIDAD.md): esquema, grants, RLS,
+  triggers, amenazas y datos visibles.
+- [Pruebas y operación](PRUEBAS-Y-OPERACION.md): entorno local, comandos, cobertura y CI.
+- [Trazabilidad](TRAZABILIDAD.md): vínculo entre requisitos, implementación y evidencia.
 
 Esta fase no implementa la criptografía ni el contenido del vault. Las tablas de vault que
 aparecen en la migración establecen anticipadamente la frontera de autorización para probar
@@ -124,7 +134,7 @@ recovery crea una sesión AAL1 y My Keys exige un desafío válido antes de llam
 `updateUser`. La integración local comprueba después un nuevo login AAL1, ausencia de datos y
 nueva elevación AAL2.
 
-## Plan de implementación
+## Plan de implementación ejecutado
 
 1. Congelar este alcance y la política MFA.
 2. Crear migración reproducible desde reset de esquema, funciones, grants y RLS.

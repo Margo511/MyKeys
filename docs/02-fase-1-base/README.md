@@ -1,13 +1,23 @@
 # My Keys — Fase 1: base
 
-**Estado:** en progreso  
-**Inicio:** 8 de septiembre de 2026
+- **Estado:** completada en Windows/Android; build iOS diferido
+- **Inicio:** 8 de septiembre de 2026
+- **Cierre del alcance validable:** 9 de septiembre de 2026
 
 ## Objetivo
 
 Construir una base móvil reproducible con Kotlin Multiplatform y Compose Multiplatform,
 Jetpack Compose en Android, límites de seguridad explícitos y controles de calidad en CI.
 El prototipo Expo permanece como referencia durante la migración.
+
+## Documentos de la fase
+
+- [Arquitectura móvil KMP](KMP-ARCHITECTURE.md): decisión, dependencias y límites.
+- [Entorno y verificación](ENTORNO-Y-VERIFICACION.md): instalación, comandos, resultados
+  esperados y particularidades de Windows.
+- [Inventario de implementación](INVENTARIO-DE-IMPLEMENTACION.md): trazabilidad entre los
+  entregables y los archivos del repositorio.
+- [`assets/`](assets/): capturas verificadas de KMP/Android y del prototipo Expo.
 
 ## Base móvil principal
 
@@ -44,10 +54,9 @@ Consulta [la decisión de arquitectura](KMP-ARCHITECTURE.md).
 
 ## Decisiones de Fase 0
 
-El inicio de esta fase registra como aceptadas las decisiones 1, 2, 3 y 5 de la Fase 0.
-La politica de recuperacion MFA sigue pendiente de cierre antes de iniciar la Fase 2. Se
-mantiene la recomendacion de registrar un segundo factor; ningun procedimiento excepcional
-podra descifrar el vault ni usar la Recovery Key como bypass de MFA.
+El inicio de esta fase registró como aceptadas las decisiones 1, 2, 3 y 5 de la Fase 0. La
+política de recuperación MFA quedó cerrada en Fase 2: se recomienda registrar un segundo
+factor y no existe bypass por soporte, email o Recovery Key del vault.
 
 ## Uso local
 
@@ -55,7 +64,7 @@ Requisitos Android instalados en esta máquina:
 
 - Android Studio Quail 4 (2026.1.4).
 - Plugin oficial Kotlin Multiplatform 261.26222.147-AS.
-- Temurin JDK 21.0.11 LTS.
+- Temurin JDK 21 LTS (21.0.11 en la evidencia original de cierre).
 - Android SDK 36, platform-tools, build-tools 36.0.0, emulator y una imagen Google Play.
 - WSL 2.7.13 con Ubuntu 24.04.4 LTS y `systemd`.
 - Docker Engine 29.8.0, Docker Compose 5.5.1 y Supabase CLI 2.111.0 dentro de WSL.
@@ -137,7 +146,9 @@ reporta 14 moderadas concentradas en `decode-uri-component` (transitiva de Expo 
 paquetes de Expo con cambios incompatibles, por lo que no se aplica `npm audit fix --force`.
 Se revisaran las actualizaciones compatibles del SDK antes de Auth/deep links.
 
-La fase no se considera terminada hasta completar todos los puntos de la puerta de salida.
+El alcance Windows/Android se considera cerrado. La casilla iOS permanece abierta como una
+verificación diferida de plataforma y no bloquea el comienzo de las fases comunes ya
+validadas en Android.
 
 ## Evidencia visual
 
