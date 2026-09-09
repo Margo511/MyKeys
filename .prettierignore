@@ -1,0 +1,16 @@
+.expo/
+.npm-cache/
+.gradle-user-home/
+android/
+ios/
+mobile/.gradle/
+mobile/.kotlin/
+mobile/**/build/
+coverage/
+dist/
+.chrome-qa*/
+.edge-qa*/
+phase1-foundation*.png
+node_modules/
+docs/01-fase-0/vista-interactiva.html
+package-lock.json

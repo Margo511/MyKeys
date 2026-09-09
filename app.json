@@ -1,0 +1,23 @@
+{
+  "expo": {
+    "name": "My Keys",
+    "slug": "my-keys",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "scheme": "mykeys",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "app.mykeys.mobile"
+    },
+    "android": {
+      "package": "app.mykeys.mobile",
+      "predictiveBackGestureEnabled": false
+    },
+    "plugins": ["expo-router"],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    }
+  }
+}

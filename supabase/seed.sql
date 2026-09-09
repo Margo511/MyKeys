@@ -1,0 +1,1 @@
+-- Fase 1 no crea datos de usuario. Las semillas apareceran junto a las migraciones de Auth/RLS.
